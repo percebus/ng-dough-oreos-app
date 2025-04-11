@@ -115,3 +115,9 @@ Open a command shell in "Administrator" mode and run the following commands:
 [Add an input parameter to the component](https://angular.dev/tutorials/first-app/05-inputs)
 
 1. Add `@Input()` to `HousingLocationComponent` class.
+
+### 06. Add a property binding to a component’s template
+
+[Add a property binding to a component’s template](https://angular.dev/tutorials/first-app/06-property-binding)
+
+1. Add a property binding to `housing-location` in `home.component.html`

@@ -38,3 +38,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 ##### Angular Language Service
 
 - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+
+### Hello world
+
+1. [Download the `.zip`](https://angular.dev/tutorials/first-app/01-hello-world)

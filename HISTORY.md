@@ -43,5 +43,10 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 1. [Download the `.zip`](https://angular.dev/tutorials/first-app/01-hello-world)
 1. `$> npm install`
-1. Added `.gitignore`
 1. `$> ng serve`
+1. Added `.gitignore`
+  - `Node.gitignore`
+  - `VisualStudioCode.gitignore`
+  - `angular.gitignore`
+
+![Screenshot](./assets/img/first-app/01-hello-world/01.png)

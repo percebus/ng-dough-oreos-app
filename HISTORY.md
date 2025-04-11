@@ -215,3 +215,11 @@ Open a command shell in "Administrator" mode and run the following commands:
 #### Result
 
 ![Screenshot](./assets/img/first-app/12-forms/01.png)
+
+### 13. Add the search feature to your app
+
+[Add the search feature to your app](https://angular.dev/tutorials/first-app/13-search)
+
+1. Move `housingLocationList` behind a `filterResults` method in `home.compnonent.ts`
+
+![Screenshot](./assets/img/first-app/13-search/01.png)

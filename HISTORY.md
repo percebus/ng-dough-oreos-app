@@ -197,3 +197,21 @@ Open a command shell in "Administrator" mode and run the following commands:
 #### AppComponent
 
 1. Add `routerLink` to `app.component.ts`
+
+### 12. Adding a form to your Angular app
+
+[Adding a form to your Angular app](https://angular.dev/tutorials/first-app/12-forms)
+
+#### HousingService
+
+1. Add a `submitApplication` method inside `housing.service.ts`
+
+#### DetailsComponent
+
+1. Add `FormGroup` to `DetailsComponent` class.
+1. Add a proxy `submitApplication` method
+1. Add a `<section>` with a `<form` tag mapping `firstName`, `lastName` and `email` to the `FormGroup` in `details.component.ts`.
+
+#### Result
+
+![Screenshot](./assets/img/first-app/12-forms/01.png)

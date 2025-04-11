@@ -90,3 +90,5 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 1. `$> ng generate component housingLocation`
 1. Add `housing-location` to `house` `component`.
+
+![Screenshot](./assets/img/first-app/03-HousingLocation/01.png)

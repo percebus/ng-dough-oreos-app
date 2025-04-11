@@ -42,3 +42,6 @@ Open a command shell in "Administrator" mode and run the following commands:
 ### Hello world
 
 1. [Download the `.zip`](https://angular.dev/tutorials/first-app/01-hello-world)
+1. `$> npm install`
+1. Added `.gitignore`
+1. `$> ng serve`

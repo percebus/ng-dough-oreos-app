@@ -89,3 +89,4 @@ Open a command shell in "Administrator" mode and run the following commands:
 ### 03. Create the application’s HousingLocation component
 
 1. `$> ng generate component housingLocation`
+1. Add `housing-location` to `house` `component`.

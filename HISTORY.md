@@ -121,3 +121,11 @@ Open a command shell in "Administrator" mode and run the following commands:
 [Add a property binding to a component’s template](https://angular.dev/tutorials/first-app/06-property-binding)
 
 1. Add a property binding to `housing-location` in `home.component.html`
+
+### 07. Add an interpolation to a component’s template
+
+[Add an interpolation to a component’s template](https://angular.dev/tutorials/first-app/07-dynamic-template-values)
+
+1. Add HTML to `housing-location.component.ts`
+
+![Screenshot](./assets/img/first-app/07-dynamic-template-values/01.png)

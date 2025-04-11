@@ -145,3 +145,4 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 1. `$> ng generate service housing --skip-tests`
 1. Copy `houseLocationList` to `housing.service.ts`
+1. `inject` `HousingService` into `HomeComponent` `constructor`

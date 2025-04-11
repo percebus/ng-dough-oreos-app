@@ -16,7 +16,7 @@
     "browser:80": "open-cli http://localhost:80",
     "browser:4200": "open-cli http://localhost:4200",
     "browser:3000": "open-cli http://localhost:3000/locations",
-    "http-server": "http-server ./dist",
+    "http-server": "http-server ./dist/browser",
     "json-server": "json-server --watch assets/json-server/first-app.json --port 3000",
     "prejson-server:local": "npm run browser:3000",
     "json-server:local": "npm run json-server",
@@ -43,7 +43,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.0",
+    "@angular/build": "^19.2.7",
     "@angular/cli": "^19.0.0",
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",

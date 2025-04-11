@@ -4,7 +4,7 @@ import {HousingLocation} from '../housinglocation';
 
 @Component({
   selector: 'app-housing-location',
-  imports: [],
+  imports: [CommonModule],
   template: `
     <section class="listing">
       <img

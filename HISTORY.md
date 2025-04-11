@@ -235,3 +235,8 @@ This will emulate a REST API for the app.
 1. `$> npm install -g json-server`.
 1. Copy Houses from `housing.service.ts` to a `db.json` file.
 1. `$> json-server --watch db.json` (this will start a server on port `3000`)
+
+#### HousingService
+
+1. Remove `housingLocationList` from `housing.service.ts`
+1. Add references to the RESTful API mocked by `json-server`.

@@ -39,14 +39,26 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
 
-### Hello world
+### 01. Hello world
+
+[01-hello-world](https://angular.dev/tutorials/first-app/01-hello-world)
 
 1. [Download the `.zip`](https://angular.dev/tutorials/first-app/01-hello-world)
 1. `$> npm install`
-1. `$> ng serve`
+1. `$> ng serve` (start and keeps running)
 1. Added `.gitignore`
   - `Node.gitignore`
   - `VisualStudioCode.gitignore`
   - `angular.gitignore`
 
+#### Before
+
 ![Screenshot](./assets/img/first-app/01-hello-world/01.png)
+
+#### Change
+
+1. Replace "Default" with "Hello world"
+
+#### After
+
+![Screenshot](./assets/img/first-app/01-hello-world/02.png)

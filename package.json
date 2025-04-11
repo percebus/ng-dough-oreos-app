@@ -2,10 +2,14 @@
   "name": "angular.dev",
   "version": "0.0.0",
   "scripts": {
+    "npm:install:global": "npm install --location=global @angular/cli json-server",
+    "setup": "npm run npm:install:global",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "ng:serve": "npm run ng -- serve",
+    "ng:build": "npm run ng -- build",
+    "ng:build:watch": "npm run ng:build -- --watch --configuration development",
+    "start": "npm run ng:serve",
+    "json-server": "json-server --watch assets/json-server/first-app.json --port 3000"
   },
   "private": true,
   "dependencies": {

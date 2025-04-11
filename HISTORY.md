@@ -223,3 +223,15 @@ Open a command shell in "Administrator" mode and run the following commands:
 1. Move `housingLocationList` behind a `filterResults` method in `home.compnonent.ts`
 
 ![Screenshot](./assets/img/first-app/13-search/01.png)
+
+### 14. Add HTTP communication
+
+[Add HTTP communication](https://angular.dev/tutorials/first-app/14-http)
+
+#### JSON Server
+
+This will emulate a REST API for the app.
+
+1. `$> npm install -g json-server`.
+1. Copy Houses from `housing.service.ts` to a `db.json` file.
+1. `$> json-server --watch db.json` (this will start a server on port `3000`)

@@ -41,7 +41,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 ### 01. Hello world
 
-[01-hello-world](https://angular.dev/tutorials/first-app/01-hello-world)
+[Hello world](https://angular.dev/tutorials/first-app/01-hello-world)
 
 1. [Download the `.zip`](https://angular.dev/tutorials/first-app/01-hello-world)
 1. `$> npm install`
@@ -65,7 +65,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 ### 02. Create Home component
 
-[02-HomeComponent](https://angular.dev/tutorials/first-app/02-HomeComponent)
+[Create Home component](https://angular.dev/tutorials/first-app/02-HomeComponent)
 
 1. `$> ng generate component home`
 1. `$> ng serve`
@@ -88,7 +88,18 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 ### 03. Create the application’s HousingLocation component
 
+[Create the application’s HousingLocation component](https://angular.dev/tutorials/first-app/03-HousingLocation)
+
 1. `$> ng generate component housingLocation`
+1. `$> ng serve` (leave running)
 1. Add `housing-location` to `house` `component`.
 
 ![Screenshot](./assets/img/first-app/03-HousingLocation/01.png)
+
+#### 04. Creating an interface
+
+[Creating an interface](https://angular.dev/tutorials/first-app/04-interfaces)
+
+1. `$> ng generate interface housinglocation`
+1. `$> ng serve` (leave running)
+1. Replace contents of `app/housinglocation.ts`

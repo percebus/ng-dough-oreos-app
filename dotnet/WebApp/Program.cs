@@ -22,11 +22,13 @@ namespace WebApp
             // Add services to the container.
 
             builder.Configuration
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile("appsettings.Development.json", true)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("appsettings.env.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
-            builder.Services.AddOptions<ServiceOptions>()
+            builder.Services
+                .AddOptions<ServiceOptions>()
                 .BindConfiguration(ServiceOptions.Key);
             //.ValidateFluently() // TODO
             //.ValidateOnStart(); // TODO
@@ -40,6 +42,8 @@ namespace WebApp
             builder.Services
                 .AddDbContext<FirstAppContext>(options => options.UseSqlServer(config.Database.ReadConnectionString));
 
+            builder.Services.AddCors();
+
             builder.Services.AddControllers();
 
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -47,6 +51,13 @@ namespace WebApp
 
             var app = builder.Build();
             CreateDbIfNotExists(app.Services);
+
+            // FIXME HACK CORS workaround for
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

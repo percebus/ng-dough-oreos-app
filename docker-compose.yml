@@ -1,23 +1,23 @@
 services:
-  mock-api:
-    build:
-      dockerfile: ./Dockerfile
-      target: json-server
-    ports:
-      - 3000:3000
+  # mock-api:
+  #   build:
+  #     dockerfile: ./Dockerfile
+  #     target: json-server
+  #   ports:
+  #     - 3000:3000
 
   # TODO
-  # web-api:
-  #   build:
-  #     context: ./dotnet
-  #     dockerfile: ./Dockerfile
-  #   ports:
-  #     - 3000:8080
+  web-api:
+    build:
+      context: ./dotnet
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:8080
 
   web-app:
     depends_on:
-      - mock-api # XXX
-      # - web-api # TODO
+      # - mock-api # XXX?
+      - web-api
     build:
       dockerfile: ./Dockerfile
       target: http-server

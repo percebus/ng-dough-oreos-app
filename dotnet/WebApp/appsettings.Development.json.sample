@@ -1,8 +1,8 @@
 {
   "FirstApp": {
     "Database": {
-      "ReadConnectionString": "Server=(localdb)\\mssqllocaldb;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true",
-      "WriteConnectionString": "Server=(localdb)\\mssqllocaldb;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true"
+      "ReadConnectionString": "Server=localhost;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true",
+      "WriteConnectionString": "Server=localhost;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
   },
   "Logging": {

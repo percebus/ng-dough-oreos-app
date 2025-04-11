@@ -240,3 +240,31 @@ This will emulate a REST API for the app.
 
 1. Remove `housingLocationList` from `housing.service.ts`
 1. Add references to the RESTful API mocked by `json-server`.
+
+## Dockerization
+
+### http-server
+
+1. `$> npm install -g http-server`
+1. Added `server.js`
+
+### angular.json
+
+1. Replaced `builder`
+
+```json
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+```
+
+See [Angular application build system](https://angular.dev/tools/cli/build-system-migration)
+
+### Dockerfile(s)
+
+1. Added multi-target `Dockerfile`s
+1. Copied `.gitignore` as `.dockerignore`
+
+### docker-compose.yml
+
+Puts everything together.

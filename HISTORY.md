@@ -271,4 +271,17 @@ Puts everything together.
 
 ## C# Backend
 
+### Scaffolding
+
 1. Created a new C# project using the Visual Studio template for **ASP.NET Core Web API**.
+
+### Clean architecture
+
+Created projects for
+
+- **Domain**: DDD entities and interfaces.
+- **Connectors**: Interfaces for the data access layer (i.e. EF).
+- **Business**: Business logic and services.
+
+These do NOT need to be separate Projects.
+However, this setup prevents circular dependencies.

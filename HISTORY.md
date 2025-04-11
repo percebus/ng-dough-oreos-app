@@ -62,3 +62,10 @@ Open a command shell in "Administrator" mode and run the following commands:
 #### After
 
 ![Screenshot](./assets/img/first-app/01-hello-world/02.png)
+
+### 02. Components
+
+[02-HomeComponent](https://angular.dev/tutorials/first-app/02-HomeComponent)
+
+1. `$> ng generate component home`
+1. `$> ng serve`

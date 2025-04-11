@@ -69,3 +69,13 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 1. `$> ng generate component home`
 1. `$> ng serve`
+
+#### Before
+
+![Screenshot](./assets/img/first-app/01-hello-world/02.png)
+
+#### Changes
+
+- Change `app.component` to include `HomeComponent`
+
+![Screenshot](./assets/img/first-app/02-HomeComponent/01.png)

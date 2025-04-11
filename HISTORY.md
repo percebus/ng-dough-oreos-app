@@ -183,3 +183,13 @@ Open a command shell in "Administrator" mode and run the following commands:
 1. `inject` `ActivatedRoute` into `DetailsComponent` constructor.
 
 ![Screenshot](./assets/img/first-app/11-details-page/01.png)
+
+1. Add details to `details.component.ts`
+
+##### House 1
+
+![House 1](./assets/img/first-app/11-details-page/02_1.png)
+
+##### House 2
+
+![House 2](./assets/img/first-app/11-details-page/02_2.png)

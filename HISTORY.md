@@ -129,3 +129,12 @@ Open a command shell in "Administrator" mode and run the following commands:
 1. Add HTML to `housing-location.component.ts`
 
 ![Screenshot](./assets/img/first-app/07-dynamic-template-values/01.png)
+
+### 08. Use *ngFor to list objects in component
+
+[Use `*ngFor` to list objects in component](https://angular.dev/tutorials/first-app/08-*ngFor)
+
+1. Replace `housingLocation` w/ `housingLocationList` in `home.component.ts`
+1. Add `*ngFor` to `housing-location` in `home.component.html`
+
+![Screenshot](./assets/img/first-app/08-ngFor/01.png)

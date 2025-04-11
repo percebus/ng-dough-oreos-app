@@ -154,3 +154,9 @@ Open a command shell in "Administrator" mode and run the following commands:
 #### DetailsComponent
 
 1. `$> ng generate component details`
+
+#### Routing
+
+##### routes.ts
+
+1. Create `src/app/routes.ts` file.

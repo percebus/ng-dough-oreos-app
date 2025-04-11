@@ -285,3 +285,21 @@ Created projects for
 
 These do NOT need to be separate Projects.
 However, this setup prevents circular dependencies.
+
+### Entity framework
+
+Based on these 2 tutorials
+
+- [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli)
+- [Tutorial: Get started with EF Core in an ASP.NET MVC web app](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-9.0)
+
+#### Connectors
+
+1. Added `Microsoft.EntityFrameworkCore.*` packages to the `Connectors` project.
+1. Added `Entities` (`HousingLocation`)
+1. Added `DbContext` (`FirstAppDbContext`)
+
+#### WebApp
+
+1. Added `LocationsController`
+1. Removed `Weather` related stuff

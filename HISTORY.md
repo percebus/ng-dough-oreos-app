@@ -146,3 +146,11 @@ Open a command shell in "Administrator" mode and run the following commands:
 1. `$> ng generate service housing --skip-tests`
 1. Copy `houseLocationList` to `housing.service.ts`
 1. `inject` `HousingService` into `HomeComponent` `constructor`
+
+### 10. Add routes to the application
+
+[Add routes to the application](https://angular.dev/tutorials/first-app/10-routing)
+
+#### DetailsComponent
+
+1. `$> ng generate component details`

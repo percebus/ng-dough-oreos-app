@@ -1,0 +1,18 @@
+services:
+  mock-api:
+    build:
+      dockerfile: ./Dockerfile
+      target: json-server
+    ports:
+      - 3000:3000
+
+  web-app:
+    depends_on:
+      - mock-api
+    build:
+      dockerfile: ./Dockerfile
+      target: http-server
+    ports:
+      - 80:4200
+    environment:
+      - PORT=4200

@@ -1,0 +1,24 @@
+FROM node:23 AS base
+
+FROM base AS project
+WORKDIR /project
+COPY . .
+RUN ls -la
+RUN npm run setup:ci --if-present
+RUN npm ci
+
+
+FROM project AS json-server
+EXPOSE 3000
+ENTRYPOINT [ "npm" ]
+CMD [ "run", "json-server:docker" ]
+
+
+FROM project AS dist
+RUN npm run dist
+RUN ls ./dist -la
+
+FROM dist AS http-server
+EXPOSE 4200
+ENTRYPOINT [ "npm" ]
+CMD [ "run", "http-server" ]

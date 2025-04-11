@@ -160,3 +160,12 @@ Open a command shell in "Administrator" mode and run the following commands:
 ##### routes.ts
 
 1. Create `src/app/routes.ts` file.
+
+##### src/app.component.ts
+
+1. Replace `HomeComponent` with `RouterModule` in `app.component.ts`
+1. Replace `<app-home>` with `<router-outlet>` in `app.component.ts`
+
+##### main.ts
+
+1. Add routing to `bootstrapApplication` in `src/main.ts`

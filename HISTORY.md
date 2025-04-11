@@ -268,3 +268,7 @@ See [Angular application build system](https://angular.dev/tools/cli/build-syste
 ### docker-compose.yml
 
 Puts everything together.
+
+## C# Backend
+
+1. Created a new C# project using the Visual Studio template for **ASP.NET Core Web API**.

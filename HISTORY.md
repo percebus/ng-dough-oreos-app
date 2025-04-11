@@ -79,3 +79,9 @@ Open a command shell in "Administrator" mode and run the following commands:
 - Change `app.component` to include `HomeComponent`
 
 ![Screenshot](./assets/img/first-app/02-HomeComponent/01.png)
+
+- Change `home/home.component.*`
+
+##### After
+
+![Screenshot](./assets/img/first-app/02-HomeComponent/02.png)

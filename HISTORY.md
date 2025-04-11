@@ -100,6 +100,12 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 [Creating an interface](https://angular.dev/tutorials/first-app/04-interfaces)
 
+##### Interface
+
 1. `$> ng generate interface housinglocation`
 1. `$> ng serve` (leave running)
 1. Replace contents of `app/housinglocation.ts`
+
+##### Dummy "Test House" data
+
+1. Add `housingLocation:HousingLocation` on `HomeComponent` class.

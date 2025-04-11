@@ -96,16 +96,22 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 ![Screenshot](./assets/img/first-app/03-HousingLocation/01.png)
 
-#### 04. Creating an interface
+### 04. Creating an interface
 
 [Creating an interface](https://angular.dev/tutorials/first-app/04-interfaces)
 
-##### Interface
+#### Interface
 
 1. `$> ng generate interface housinglocation`
 1. `$> ng serve` (leave running)
 1. Replace contents of `app/housinglocation.ts`
 
-##### Dummy "Test House" data
+### Dummy "Test House" data
 
 1. Add `housingLocation:HousingLocation` on `HomeComponent` class.
+
+### 05. Add an input parameter to the component
+
+[Add an input parameter to the component](https://angular.dev/tutorials/first-app/05-inputs)
+
+1. Add `@Input()` to `HousingLocationComponent` class.

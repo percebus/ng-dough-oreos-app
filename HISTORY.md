@@ -63,7 +63,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 
 ![Screenshot](./assets/img/first-app/01-hello-world/02.png)
 
-### 02. Components
+### 02. Create Home component
 
 [02-HomeComponent](https://angular.dev/tutorials/first-app/02-HomeComponent)
 
@@ -85,3 +85,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 ##### After
 
 ![Screenshot](./assets/img/first-app/02-HomeComponent/02.png)
+
+### 03. Create the application’s HousingLocation component
+
+1. `$> ng generate component housingLocation`

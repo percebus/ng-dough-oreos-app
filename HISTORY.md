@@ -169,3 +169,17 @@ Open a command shell in "Administrator" mode and run the following commands:
 ##### main.ts
 
 1. Add routing to `bootstrapApplication` in `src/main.ts`
+
+### 11. Integrate details page into application
+
+[Integrate details page into application](https://angular.dev/tutorials/first-app/11-details-page)
+
+#### HousingLocationComponent
+
+1. Add `[routerLink]` to `housing-location` for dynamic navigation.
+
+#### DetailsComponent
+
+1. `inject` `ActivatedRoute` into `DetailsComponent` constructor.
+
+![Screenshot](./assets/img/first-app/11-details-page/01.png)

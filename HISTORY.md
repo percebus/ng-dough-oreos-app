@@ -193,3 +193,7 @@ Open a command shell in "Administrator" mode and run the following commands:
 ##### House 2
 
 ![House 2](./assets/img/first-app/11-details-page/02_2.png)
+
+#### AppComponent
+
+1. Add `routerLink` to `app.component.ts`

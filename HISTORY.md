@@ -138,3 +138,10 @@ Open a command shell in "Administrator" mode and run the following commands:
 1. Add `*ngFor` to `housing-location` in `home.component.html`
 
 ![Screenshot](./assets/img/first-app/08-ngFor/01.png)
+
+### 09. Angular services
+
+[Angular services](https://angular.dev/tutorials/first-app/09-services)
+
+1. `$> ng generate service housing --skip-tests`
+1. Copy `houseLocationList` to `housing.service.ts`

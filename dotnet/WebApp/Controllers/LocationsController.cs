@@ -3,15 +3,11 @@
     using Connectors;
     using Microsoft.AspNetCore.Mvc;
 
-    [ApiController]
-    [Route("[controller]")]
-    public class LocationsController : ControllerBase
+    [Route("[controller]")] // NOTE: The tutorial references /locations directly
+    public class LocationsController : FirstAppContextControllerBase
     {
-        protected FirstAppContext Context { get; private set; }
-
-        public LocationsController(FirstAppContext context)
+        public LocationsController(FirstAppContext context) : base(context)
         {
-            this.Context = context;
         }
 
         [HttpGet]

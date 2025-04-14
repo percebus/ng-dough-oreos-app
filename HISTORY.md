@@ -303,3 +303,31 @@ Based on these 2 tutorials
 
 1. Added `LocationsController`
 1. Removed `Weather` related stuff
+
+### GraphQL
+
+[Code Using GraphQL](https://graphql.org/community/tools-and-libraries/)
+
+#### HotChocolate
+
+- [Creating a GraphQl backend in c# — How to get started with Hot Chocolate 12 in .Net 6](https://medium.com/@TimHolzherr/creating-a-graphql-backend-in-c-how-to-get-started-with-hot-chocolate-12-in-net-6-30f0fb177c5c)
+
+#### EntityGraphQL
+
+- [Getting Started](https://entitygraphql.github.io/docs/getting-started#custom-controller--manual-execution)
+
+#### Integrating
+
+1. Added bits to `Program.cs`
+
+#### Versions mis-match
+
+This was the combination of versions that I was able to make work
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="EntityGraphQL.AspNet" Version="5.1.0" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.7.0" />
+```
+
+However, `EntityGraphQL` and `HotChocolate` respectively are now at `5.6.x` and `15.x`.

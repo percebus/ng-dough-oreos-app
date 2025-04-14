@@ -1,8 +1,11 @@
 
 namespace WebApp
 {
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
     using Connectors;
     using Connectors.Data;
+    using EntityGraphQL.AspNet;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -14,6 +17,7 @@ namespace WebApp
 
     public class Program
     {
+        protected static JsonStringEnumConverter JsonStringEnumConverter = new();
 
         public static void Main(string[] args)
         {
@@ -40,24 +44,45 @@ namespace WebApp
             config = provider.GetRequiredService<IOptionsMonitor<ServiceOptions>>().CurrentValue;
 
             builder.Services
-                .AddDbContext<FirstAppContext>(options => options.UseSqlServer(config.Database.ReadConnectionString));
+                .AddOpenApi() // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+                .AddCors()
+                .AddControllers()
+                .AddJsonOptions(opts =>
+                {
+                    // Use enum field names instead of numbers
+                    opts.JsonSerializerOptions.Converters.Add(JsonStringEnumConverter);
 
-            builder.Services.AddCors();
+                    // EntityGraphQL internally builds types with fields
+                    opts.JsonSerializerOptions.IncludeFields = true;
 
-            builder.Services.AddControllers();
+                    // The fields internally built already are named with fieldNamer (defaults to camelCase). This is
+                    // for the properties on QueryResult (Data, Errors) to match what most tools etc expect (camelCase)
+                    opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+                });
 
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+            builder.Services.AddDbContext<FirstAppContext>(options => options.UseSqlServer(config.Database.ReadConnectionString));
+
+            // EntityGraphQL
+            builder.Services
+                .AddGraphQLSchema<FirstAppContext>();
+
+            // HotChocolate Nitro (Formerly "Banana Cake Pop")
+            builder.Services
+                .AddGraphQLServer();
 
             var app = builder.Build();
             CreateDbIfNotExists(app.Services);
 
-            // FIXME HACK CORS workaround for
-            app.UseCors(x => x
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .SetIsOriginAllowed(origin => true) // allow any origin
-                .AllowCredentials()); // allow credentials
+            app
+                // .UseAuthentication() // TODO
+                // .UseAuthorization() // TODO
+                .UseRouting()
+                .UseHttpsRedirection()
+                .UseCors(x => x // FIXME HACK CORS workaround for
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed(origin => true) // allow any origin
+                    .AllowCredentials()); // allow credentials
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -66,9 +91,22 @@ namespace WebApp
                 app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Swagger"));
             }
 
-            app.UseHttpsRedirection();
-            app.UseAuthorization();
+            // TODO?
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // defaults to /graphql endpoint
+            //    endpoints.MapGraphQL<FirstAppContext>(configureEndpoint: (endpoint) =>
+            //    {
+            //        endpoint.RequireAuthorization("authorized"); // TODO
+            //
+            //        // do other things with endpoint
+            //    });
+            //});
+
             app.MapControllers();
+            app.MapGraphQL<FirstAppContext>(); // EntityGraphQL
+            app.MapGraphQL(); // HotChocolate Nitro (Formerly "Banana Cake Pop")
+
             app.Run();
         }
 

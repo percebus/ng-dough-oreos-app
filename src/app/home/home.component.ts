@@ -1,8 +1,22 @@
-import {Component, inject} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HousingService} from '../housing.service';
+// import {HousingService} from '../housing.service'; // XXX
 import {HousingLocationComponent} from '../housing-location/housing-location.component';
 import {HousingLocation} from '../housinglocation';
+import { Apollo, gql } from 'apollo-angular';
+import { Subscription } from 'rxjs';
+
+const QUERY = gql`
+query {
+  housingLocations {
+    id
+    name
+    city
+    state
+    photo
+  }
+}
+`;
 
 @Component({
   selector: 'app-home',
@@ -24,17 +38,28 @@ import {HousingLocation} from '../housinglocation';
   styleUrls: ['./home.component.css'],
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
+  loading: boolean = false;
+
   housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject(HousingService);
   filteredLocationList: HousingLocation[] = [];
 
-  constructor() {
-    this.housingService
-      .getAllHousingLocations()
-      .then((housingLocationList: HousingLocation[]) => {
-        this.housingLocationList = housingLocationList;
-        this.filteredLocationList = housingLocationList;
+  // XXX
+  // housingService: HousingService = inject(HousingService);
+
+  private querySubscription: Subscription = new Subscription();
+
+  constructor(private readonly apollo: Apollo) { }
+
+  ngOnInit() {
+    this.querySubscription = this.apollo
+      .watchQuery<any>({
+        query: QUERY,
+      })
+      .valueChanges.subscribe(({ data, loading }) => {
+        this.loading = loading;
+        this.housingLocationList = data.housingLocations;
+        this.filteredLocationList = data.housingLocations;
       });
   }
 
@@ -43,10 +68,15 @@ export class HomeComponent {
       this.filteredLocationList = this.housingLocationList;
       return;
     }
+
     this.filteredLocationList = this.housingLocationList.filter((housingLocation) =>
-      housingLocation?.city
+      (housingLocation?.city || '')
         .toLowerCase()
         .includes(text.toLowerCase()),
     );
+  }
+
+  ngOnDestroy() {
+    this.querySubscription.unsubscribe();
   }
 }

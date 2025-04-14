@@ -6,7 +6,19 @@ import {bootstrapApplication, provideProtractorTestingSupport} from '@angular/pl
 import {AppComponent} from './app/app.component';
 import {provideRouter} from '@angular/router';
 import routeConfig from './app/routes';
+import { provideHttpClient } from '@angular/common/http';
+import { provideApollo } from 'apollo-angular';
+import { inject } from '@angular/core';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
 
 bootstrapApplication(AppComponent, {
-  providers: [provideProtractorTestingSupport(), provideRouter(routeConfig)],
+  providers: [provideProtractorTestingSupport(), provideRouter(routeConfig), provideHttpClient(), provideApollo(() => {
+      const httpLink = inject(HttpLink);
+
+      return {
+        link: httpLink.create({uri: 'http://localhost:3000/graphql'}), // FIXME pass with env
+        cache: new InMemoryCache(),
+      };
+    })],
 }).catch((err) => console.error(err));

@@ -304,7 +304,9 @@ Based on these 2 tutorials
 1. Added `LocationsController`
 1. Removed `Weather` related stuff
 
-### GraphQL
+## GraphQL
+
+### Backend
 
 [Code Using GraphQL](https://graphql.org/community/tools-and-libraries/)
 
@@ -331,3 +333,10 @@ This was the combination of versions that I was able to make work
 ```
 
 However, `EntityGraphQL` and `HotChocolate` respectively are now at `5.6.x` and `15.x`.
+
+### Frontend
+
+#### Apollo
+
+- [Get Started](https://the-guild.dev/graphql/apollo-angular/docs/get-started)
+- [Queries](https://the-guild.dev/graphql/apollo-angular/docs/data/queries)

@@ -1,20 +1,29 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# ng-dough-oreos-app
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+[HISTORY](./HISTORY.md)
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Resources
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+### Angular
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- [angular.dev](https://angular.dev/) (`v19`)
+- [First-app](https://angular.dev/tutorials/first-app)
+
+### GraphQL
+
+- [graphQL.org](https://graphql.org/)
+- [Code Using GraphQL](https://graphql.org/community/tools-and-libraries/)
+
+#### Angular
+
+- [Apollo Angular](https://the-guild.dev/graphql/apollo-angular/docs/get-started)
+
+#### .NET
+
+- HotChocolate's [Nitro](https://chillicream.com/docs/nitro), F.K.A. `Banana Cake Pop`
+- [EntityGraphQL](https://github.com/EntityGraphQL/EntityGraphQL)
+
+### Clean Architecture
+
+- [Clean Architecture in ASP .NET Core Web API](https://medium.com/@mohanedzekry/clean-architecture-in-asp-net-core-web-api-d44e33893e1d)
+- [How To Approach Clean Architecture Folder Structure](https://www.milanjovanovic.tech/blog/clean-architecture-folder-structure)

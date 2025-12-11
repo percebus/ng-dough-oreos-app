@@ -1,8 +1,8 @@
 {
   "FirstApp": {
     "Database": {
-      "ReadConnectionString": "Server=localhost;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true",
-      "WriteConnectionString": "Server=localhost;Database=FirstApp;Trusted_Connection=True;MultipleActiveResultSets=true"
+      "ReadConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FirstApp;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30",
+      "WriteConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FirstApp;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30"
     }
   },
   "Logging": {

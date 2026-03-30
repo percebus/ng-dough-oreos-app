@@ -1,0 +1,42 @@
+scalar Char
+
+scalar Date
+
+scalar DateTimeOffset
+
+type HousingLocation {
+  """"""
+  id: Int!
+
+  """"""
+  name: String!
+
+  """"""
+  city: String!
+
+  """"""
+  state: String!
+
+  """"""
+  photo: String!
+
+  """"""
+  availableUnits: Int!
+
+  """"""
+  wifi: Boolean!
+
+  """"""
+  laundry: Boolean!
+}
+
+"""
+The query type, represents all of the entry points into our object graph
+"""
+type Query {
+  """Return a HousingLocation by its Id"""
+  housingLocation(id: Int!): HousingLocation
+
+  """"""
+  housingLocations: [HousingLocation!]!
+}
